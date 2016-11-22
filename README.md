@@ -3,4 +3,4 @@ a Simple Game Engine
 
 Work in Progress
 
-Programming Language : C++
+Using C++ and GLFW 
