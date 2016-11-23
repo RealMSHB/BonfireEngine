@@ -17,6 +17,11 @@ int main()
 	while (!window.closed())
 	{
 		window.clear();
+		double x, y;
+		window.getMousePosition(x, y);
+		std::cout << "X : " << x << " Y : " << y << "\n";
+
+
 		glBegin(GL_TRIANGLES);
 		glVertex2f(-0.5f, -0.5f);
 		glVertex2f( 0.0f, 0.5f);
