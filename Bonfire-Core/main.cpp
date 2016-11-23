@@ -1,10 +1,12 @@
 #include "src/graphics/window.h"
+#include "src/maths/maths.h"
 
 
 int main()
 {
 	using namespace bonfire;
 	using namespace graphics;
+	using namespace maths;
 
 	Window window("Bonfire", 1024, 720 );
 
@@ -14,12 +16,15 @@ int main()
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
+	vec3 a(2.0f, 2.0f,4.0f);
+	vec3 b(1.0f, 2.0f,5.0f);
+	vec3 c = a + b;
+
 	while (!window.closed())
 	{
 		window.clear();
-		double x, y;
-		window.getMousePosition(x, y);
-		std::cout << "X : " << x << " Y : " << y << "\n";
+
+		std::cout << a << "\n";
 
 
 		glBegin(GL_TRIANGLES);
