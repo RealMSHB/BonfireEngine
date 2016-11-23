@@ -6,18 +6,23 @@ int main()
 	using namespace bonfire;
 	using namespace graphics;
 
-	Window window("Bonfire", 800, 600);
+	Window window("Bonfire", 1024, 720 );
 
 	glClearColor(0.2f, 0.5f, 0.2f, 1.0f);
+
+	GLuint vao;
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
 
 	while (!window.closed())
 	{
 		window.clear();
 		glBegin(GL_TRIANGLES);
-		glVertex2f(-0.25f, -0.25f);
-		glVertex2f( 0.0f, 1.0f);
-		glVertex2f( 1.0f, -1.0f);
+		glVertex2f(-0.5f, -0.5f);
+		glVertex2f( 0.0f, 0.5f);
+		glVertex2f( 0.5f, -0.5f);
 		glEnd();
+		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
 		window.update();
 	}
 

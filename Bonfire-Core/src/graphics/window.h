@@ -1,6 +1,7 @@
 #pragma once
-#include <GLFW/glfw3.h>
 #include <iostream>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 namespace bonfire { namespace graphics {
 
@@ -21,7 +22,7 @@ namespace bonfire { namespace graphics {
 		inline int getWidth() const { return m_Width; }
 		inline int getHeight() const { return m_Height; }
 	private:
-		bool init();
+		bool init(); 
 	};
 
 } }

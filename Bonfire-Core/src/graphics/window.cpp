@@ -27,10 +27,6 @@ namespace bonfire { namespace graphics {
 		{
 			std::cout << "Failed to Inlitialize GLFW !!" << "\n";
 		}
-		else
-		{
-			std::cout << "Initialaized !!!!";
-		}
 
 		m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, nullptr, nullptr);
 		if(!m_Window)
@@ -41,6 +37,15 @@ namespace bonfire { namespace graphics {
 		}
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowSizeCallback(m_Window, windowResize);
+
+		if(glewInit() != GLEW_OK)
+		{
+			std::cout << "Could not initialaize GLEW !!!" << "\n";
+			return false;
+		}
+
+		std::cout << "OpenGL : " << glGetString(GL_VERSION) << "\n";
+
 		return true;
 	}
 
@@ -65,6 +70,5 @@ namespace bonfire { namespace graphics {
 	void windowResize(GLFWwindow *window , int width , int height)
 	{
 		glViewport(0, 0, width, height);
-		std::cout << "Resized ..." << "\n";
 	}
 } } 
